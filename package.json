@@ -1,15 +1,17 @@
 {
   "name": "dota2",
-  "version": "4.2.1",
+  "version": "5.2.0",
   "dependencies": {
-    "bignumber.js": "^3.0.0",
-    "deferred": "^0.7.2",
+    "deferred": "^0.7.6",
+    "long": "^3.2.0",
     "merge": "^1.2.0",
-    "protobufjs": "^6.0.0",
-    "steam": "^1.2.0"
+    "moment": "^2.18.1",
+    "protobufjs": "^6.7.3",
+    "steam": "^1.4.0",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
-    "mocha": "^3.0.2",
+    "mocha": "^3.4.0",
     "should": "^11.0.0"
   },
   "scripts": {
