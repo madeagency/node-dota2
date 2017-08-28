@@ -32,12 +32,12 @@ Dota2.Dota2Client.prototype.watchServer = function(server_steam_id, callback) {
 
   this.sendToGC(  Dota2.schema.lookupEnum("EDOTAGCMsg").values.k_EMsgGCWatchGame,
                   Dota2.schema.lookupType("CMsgWatchGame").encode(payload).finish(),
-                  onWatchGameResponse, callback)
+                  onWatchServerResponse, callback)
 }
 
 var handlers = Dota2.Dota2Client.prototype._handlers;
 
-var onWatchGameResponse = function onWatchGameResponse(message, callback) {
+var onWatchServerResponse = function onWatchServerResponse(message, callback) {
   var watchGameResponse = Dota2.schema.lookupType("CMsgWatchGameResponse").decode(message);
 
   this.Logger.debug("Received watch_server response " + JSON.stringify(watchGameResponse));
@@ -51,4 +51,4 @@ var onWatchGameResponse = function onWatchGameResponse(message, callback) {
     }
   }
 };
-handlers[Dota2.schema.lookupEnum("EDOTAGCMsg").values.k_EMsgGCWatchGameResponse] = onWatchGameResponse;
+handlers[Dota2.schema.lookupEnum("EDOTAGCMsg").values.k_EMsgGCWatchGameResponse] = onWatchServerResponse;

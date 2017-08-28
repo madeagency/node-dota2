@@ -49,6 +49,7 @@ Dota2.schema = Protobuf.loadSync(folder.map(filename => __dirname + '/proto/' + 
  * @fires module:Dota2.Dota2Client#event:hellotimeout
  * @fires module:Dota2.Dota2Client#event:popup
  * @fires module:Dota2.Dota2Client#event:sourceTVGamesData
+ * @fires module:Dota2.Dota2Client#event:watchServerResponse
  * @fires module:Dota2.Dota2Client#event:inventoryUpdate
  * @fires module:Dota2.Dota2Client#event:practiceLobbyUpdate
  * @fires module:Dota2.Dota2Client#event:practiceLobbyCleared
