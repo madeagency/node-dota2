@@ -126,6 +126,7 @@ Dota 2 module
                 * [.inviteToParty(steam_id)](#module_Dota2.Dota2Client+inviteToParty)
                 * [.kickFromParty(steam_id)](#module_Dota2.Dota2Client+kickFromParty)
                 * [.requestSourceTVGames(filter_options)](#module_Dota2.Dota2Client+requestSourceTVGames)
+                * [.watchServer (server_steam_id, callback)](#module_Dota2.Dota2Client#watchServer+event_watchServerResponse)
                 * [.requestMyTeams([callback])](#module_Dota2.Dota2Client+requestMyTeams)
                 * ["ready"](#module_Dota2.Dota2Client+event_ready)
                 * ["unhandled" (kMsg, kMsg_name)](#module_Dota2.Dota2Client+event_unhandled)
@@ -261,6 +262,7 @@ Dota 2 module
         * [.inviteToParty(steam_id)](#module_Dota2.Dota2Client+inviteToParty)
         * [.kickFromParty(steam_id)](#module_Dota2.Dota2Client+kickFromParty)
         * [.requestSourceTVGames(filter_options)](#module_Dota2.Dota2Client+requestSourceTVGames)
+        * [.watchServer (server_steam_id, callback)](#module_Dota2.Dota2Client#watchServer+event_watchServerResponse)
         * [.requestMyTeams([callback])](#module_Dota2.Dota2Client+requestMyTeams)
         * ["ready"](#module_Dota2.Dota2Client+event_ready)
         * ["unhandled" (kMsg, kMsg_name)](#module_Dota2.Dota2Client+event_unhandled)
@@ -1155,6 +1157,20 @@ Requires the GC to be [ready](#module_Dota2.Dota2Client+event_ready).
 | filter_options.league_id | <code>number</code> | ID of a league |
 | filter_options.hero_id | <code>number</code> | ID of a hero that must be present in the game |
 | filter_options.start_game | <code>number</code> | Number of pages sent, only values in [0, 10, 20, ... 90] are valid, and yield [1,2,3 ... 10] responses |
+
+<a name="module_dota2.Dota2Client+watchServer"></a>
+
+#### dota2Client.watchServer(server_steam_id, [callback])
+Sends a message to the Game Coordinator requesting to spectate a game.
+Listen for [watchServerResponse](#module_Dota2.Dota2Client+event_watchServerResponse) for the state of the request.
+Requires the GC to be [ready](#module_Dota2.Dota2Client+event_ready).
+
+**Kind**: instance method of [<code>Dota2Client</code>](#module_Dota2.Dota2Client)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| server_steam_id | [<code>string</code>] | 64bit ID of steam server connecting to
+| [callback] | [<code>requestCallback</code>](#module_Dota2..requestCallback) | Called with `err, CMsgWatchGameResponse`
 
 <a name="module_Dota2.Dota2Client+requestMyTeams"></a>
 
