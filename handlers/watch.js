@@ -27,7 +27,7 @@ Dota2.Dota2Client.prototype.watchServer = function(server_steam_id, callback) {
     "server_steamid": server64ID,
     "watch_server_steamid": 0,
     "lobby_id": 0,
-    "regions": Object.keys(Dota2.ServerRegion).map(function(k) { return Dota2.ServerRegion[k] })
+    "regions": Object.keys(Dota2.ServerRegion).map(function(key) { return Dota2.ServerRegion[key] })
   };
 
   this.sendToGC(  Dota2.schema.lookupEnum("EDOTAGCMsg").values.k_EMsgGCWatchGame,
