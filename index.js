@@ -375,4 +375,5 @@ require("./handlers/team");
 require("./handlers/custom");
 require("./handlers/general");
 require("./handlers/fantasy");
+require("./handlers/watch");
 require("./handlers/compendium");
