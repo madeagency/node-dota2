@@ -27,12 +27,12 @@ Dota2.Dota2Client.prototype.watchServer = function(server_steam_id, callback) {
     "server_steamid": server64ID,
     "watch_server_steamid": 0,
     "lobby_id": 0,
-    "regions": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-  }
+    "regions": Object.keys(Dota2.ServerRegion).map(function(k) { return Dota2.ServerRegion[k] })
+  };
 
   this.sendToGC(  Dota2.schema.lookupEnum("EDOTAGCMsg").values.k_EMsgGCWatchGame,
                   Dota2.schema.lookupType("CMsgWatchGame").encode(payload).finish(),
-                  onWatchServerResponse, callback)
+                  onWatchServerResponse, callback);
 }
 
 var handlers = Dota2.Dota2Client.prototype._handlers;
